@@ -12,22 +12,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Botones y TextField')),
+        appBar: AppBar(
+          title: const Text("Formulario de Usuario"),
+          centerTitle: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Caja de texto básica
-              const TextField(),
 
-              const SizedBox(height: 20),
-
-              // Caja de texto con diseño
+              // TextField con diseño
               const TextField(
                 decoration: InputDecoration(
-                  labelText: "Nombre",
-                  hintText: "Escribe tu nombre",
+                  labelText: "Nombre completo",
+                  hintText: "Ingrese su nombre",
                   prefixIcon: Icon(Icons.person),
                   border: OutlineInputBorder(),
                 ),
@@ -35,29 +34,22 @@ class MyApp extends StatelessWidget {
 
               const SizedBox(height: 30),
 
+              // Botón principal
               ElevatedButton(
                 onPressed: () {
-                  print("Elevated presionado");
+                  print("Formulario enviado");
                 },
-                child: const Text("Elevated Button"),
+                child: const Text("Enviar"),
               ),
 
               const SizedBox(height: 15),
 
+              // Botón secundario
               TextButton(
                 onPressed: () {
-                  print("Text presionado");
+                  print("Formulario cancelado");
                 },
-                child: const Text("Text Button"),
-              ),
-
-              const SizedBox(height: 15),
-
-              OutlinedButton(
-                onPressed: () {
-                  print("Outlined presionado");
-                },
-                child: const Text("Outlined Button"),
+                child: const Text("Cancelar"),
               ),
             ],
           ),
